@@ -1,0 +1,20 @@
+<script>
+
+</script>
+
+<footer>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/JesusAtao96">Jesús Alejandro Atao</a>.
+    </div>
+</footer>
+
+<style>
+	footer {
+        grid-row: 5 / 6;
+        grid-column: center-start / center-end;
+        
+        text-align: center;
+        margin: 20px 0;
+    }
+</style>

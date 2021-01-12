@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+:root {
+	--primary: hsl(180, 29%, 50%);
+	--body-background: hsl(180, 52%, 96%);
+	--tag-background: hsl(180, 31%, 95%);
+	--dark-grayish-cyan: hsl(180, 8%, 52%);
+	--very-dark-grayish-cyan: hsl(180, 14%, 20%);
+	--white: #fff;
+	--black: #000;
+
+	--shadow: 0px 10px 20px -10px hsla(180, 29%, 50%, 0.4);
+	--border-radius: 10px;
+
+	/* Responsive Breakpoints -> 1em = 16px */
+	--bp-large: 68.75em; /* 1100px / 16px = 68.75 */
+	--bp-medium: 50em; /* 800px / 16px = 50 */
+	--bp-small: 37.5em; /* 600px / 16px = 37.5 */
+	
+	--max-width: 1100px;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+	font-size: 15px;
+	background-color: var(--body-background);
+
+    display: grid;
+    grid-template-rows: 135px repeat(2, 40px) 1fr min-content;
+    grid-template-columns: [full-start] 1fr [center-start] minmax(min-content, var(--max-width)) [center-end] 1fr [full-end];
+}
+
+body::before {
+	content: '';
+	grid-row: 1 / 3;
+	grid-column: full-start / full-end;
+	background-color: var(--primary);
+	background-image: url('./static/images/bg-header-desktop.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: var(--bp-small)) {
+	body::before {
+		background-image: url('./static/images/bg-header-mobile.svg');
+	}
+}
