@@ -1,10 +1,9 @@
 <script>
+	import Detail from './Detail.svelte';
 	import Pill from './Pill.svelte';
     import Tag from './Tag.svelte';
 
     export let data;
-
-    console.log(data);
 </script>
 
 <div class="item">
@@ -23,9 +22,9 @@
         <span class="item__position">{ data.position }</span>
 
         <div class="item__details">
-            <span class="item__detail">{ data.postedAt }</span>
-            <span class="item__detail item__detail--separator">{ data.contract }</span>
-            <span class="item__detail">{ data.location }</span>
+            <Detail text={ data.postedAt } />
+            <Detail text={ data.contract } hasSeparator={ true } />
+            <Detail text={ data.location } />
         </div>
     </div>
 
@@ -47,7 +46,7 @@
         border-left: 5px solid var(--primary);
 
         display: grid;
-        grid-template-columns: 20px min-content 1fr min-content 25px;
+        grid-template-columns: 20px min-content 1fr 1fr 25px;
         grid-template-rows: 25px min-content 25px;
         column-gap: 20px;
         align-items: center;
@@ -91,6 +90,11 @@
     .item__position {
         font-weight: 700;
         font-size: 18px;
+        transition: color .3s;
+    }
+
+    .item__position:hover {
+        color: var(--primary);
     }
 
     .item__details {
@@ -98,29 +102,11 @@
         align-items: center;
     }
 
-    .item__detail {
-        color: var(--dark-grayish-cyan);
-        font-weight: 500;
-    }
-
-    .item__detail--separator {
-        display: flex;
-        align-items: center;
-    }
-
-    .item__detail--separator::before,
-    .item__detail--separator::after {
-        content: '';
-        margin: 0 15px;
-        width: 4px;
-        height: 4px;
-        border-radius: 100%;
-        background-color: var(--dark-grayish-cyan);
-    }
-
     .item__tags {
         grid-column: 4 / 5;
 
         display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
     }
 </style>

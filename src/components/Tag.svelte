@@ -14,6 +14,7 @@
         border-radius: 5px;
         cursor: pointer;
         transition: all .3s;
+        font-size: 12px;
     }
 
     .tag:hover {

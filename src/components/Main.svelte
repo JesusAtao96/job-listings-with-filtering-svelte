@@ -9,6 +9,8 @@
 <main>
     {#each json.default as data}
         <Item data={ data }></Item>
+    {:else}
+        <p>No jobs found!</p>
     {/each}
 </main>
 
