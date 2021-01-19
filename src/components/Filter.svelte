@@ -1,9 +1,11 @@
 <script>
+    import { getContext } from 'svelte';
 
+    let filters = getContext('filters');
 </script>
 
 <div class="filter">
-    Filter
+    <p>{ $filters }</p>
 </div>
 
 <style>

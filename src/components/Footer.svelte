@@ -15,6 +15,19 @@
         grid-column: center-start / center-end;
         
         text-align: center;
-        margin: 20px 0;
+        padding: 10px 0 40px 0;
+    }
+
+    a {
+        color: var(--primary);
+    }
+
+    @media only screen and (max-width: 900px) {
+        footer {
+            grid-row: 6 / 7;
+
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+            grid-template-rows: min-content;
+        }
     }
 </style>

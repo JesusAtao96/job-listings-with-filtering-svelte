@@ -1,7 +1,7 @@
 <script>
-    export let text;
-    export let isNew;
-    export let isFeatured;
+    export let text = '';
+    export let isNew = false;
+    export let isFeatured = false;
 </script>
 
 {#if isNew}
@@ -17,12 +17,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 8px 10px 4px 10px;
+        padding: 6px 8px 2px 8px;
         border-radius: 30px;
         color: var(--white);
-        font-size: 11px;
+        font-size: 0.7rem;
         font-weight: 700;
         margin: 0 5px;
+        text-transform: uppercase;
     }
 
     .pill--primary {

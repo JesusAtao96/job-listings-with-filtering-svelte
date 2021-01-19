@@ -1,7 +1,13 @@
 <script>
+    import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
 	import Filter from './components/Filter.svelte';
 	import Main from './components/Main.svelte';
 	import Footer from './components/Footer.svelte';
+
+	let filters = writable([]);
+    setContext('filters', filters);
 </script>
 
 <Filter></Filter>

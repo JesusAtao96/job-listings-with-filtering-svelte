@@ -1,8 +1,18 @@
 <script>
+    import { getContext } from 'svelte';
+
     export let text;
+
+    let filters = getContext('filters');
+
+    function addFilter(text) {
+        if($filters.indexOf(text) === -1 ) {
+            $filters = [...$filters, text];
+        }
+	}
 </script>
 
-<span class="tag">{ text }</span>
+<span class="tag" on:click={addFilter(text)}>{ text }</span>
 
 <style>
 	.tag {
@@ -10,11 +20,11 @@
         background-color: var(--tag-background);
         font-weight: 700;
         padding: 7px 10px 5px 10px;
-        margin-right: 15px;
+        margin: 5px 15px 5px 0;
         border-radius: 5px;
         cursor: pointer;
         transition: all .3s;
-        font-size: 12px;
+        font-size: 0.86rem;
     }
 
     .tag:hover {

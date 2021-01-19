@@ -1,6 +1,6 @@
 <script>
-    export let text;
-    export let hasSeparator;
+    export let text = '';
+    export let hasSeparator = false;
 </script>
 
 <span class="detail { hasSeparator ? 'detail--separator' : '' }">{ text }</span>
@@ -19,10 +19,16 @@
     .detail--separator::before,
     .detail--separator::after {
         content: '';
-        margin: 0 15px;
+        margin: 0 13px;
         width: 4px;
         height: 4px;
         border-radius: 100%;
         background-color: var(--dark-grayish-cyan);
+    }
+
+    @media only screen and (max-width: 900px) {
+        .detail {
+            font-size: .86rem;
+        }
     }
 </style>
