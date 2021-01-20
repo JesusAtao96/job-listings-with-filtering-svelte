@@ -4,22 +4,17 @@
     import Item from './Item.svelte';
 
     import * as json from '../data.json'
-    
+
     let jobs = json.default;
 
     let filters = getContext('filters');
 
-    const unsubscribe = filters.subscribe(value => {
-        jobs = $filters.length > 0 ? filterJobs(jobs) : jobs;
-        console.log('jobs', jobs);
-    });
-
-    function filterJobs(jobs) {
-        return jobs.filter((job) => {
+    const unsubscribe = filters.subscribe(() => {
+        jobs = json.default.filter((job) => {
             let tags = [job.role, job.level, ...job.languages, ...job.tools];
             return $filters.every((value) => tags.includes(value));
         });
-    }
+    });
 
     onDestroy(unsubscribe);
 </script>
@@ -41,7 +36,7 @@
         display: grid;
         grid-template-rows: repeat(auto-fit, minmax(150px, min-content));
         column-gap: 25px;
-        row-gap: 65px;
+        row-gap: 25px;
     }
 
     @media only screen and (max-width: 900px) {

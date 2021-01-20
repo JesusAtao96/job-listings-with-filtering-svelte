@@ -50,7 +50,7 @@
         height: 150px;
 
         display: grid;
-        grid-template-columns: 20px min-content 1fr 1fr 25px;
+        grid-template-columns: 20px min-content max-content 1fr 25px;
         grid-template-rows: 30px min-content 30px;
         column-gap: 20px;
         align-items: center;
@@ -95,6 +95,7 @@
     .item__position {
         font-weight: 700;
         font-size: 1.2rem;
+        cursor: pointer;
         transition: color .3s;
     }
 
