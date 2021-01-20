@@ -39,7 +39,7 @@ body {
 	background-color: var(--body-background);
 
     display: grid;
-    grid-template-rows: 120px repeat(2, 40px) 1fr min-content;
+    grid-template-rows: 125px repeat(2, minmax(35px, min-content)) 1fr min-content;
     grid-template-columns: [full-start] 1fr [center-start] minmax(min-content, var(--max-width)) [center-end] 1fr [full-end];
 }
 
@@ -70,7 +70,7 @@ body::before {
 	}
 
 	body {
-		grid-template-rows: 120px repeat(3, 40px) 1fr min-content;
+		grid-template-rows: 120px repeat(3, minmax(40px, min-content)) 1fr min-content;
 		grid-template-columns: [full-start] 50px [center-start] minmax(min-content, var(--max-width)) [center-end] 50px [full-end];
 	}
 }
