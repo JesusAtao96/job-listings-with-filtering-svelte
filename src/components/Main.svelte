@@ -45,6 +45,7 @@
 
             grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
             grid-template-rows: min-content;
+            row-gap: 60px;
         }
     }
 

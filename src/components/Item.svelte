@@ -6,7 +6,7 @@
     export let job;
 </script>
 
-<div class="item">
+<div class="item { job.new && 'item--border'}">
     <img class="item__logo" src={ job.logo } alt={ job.company }>
 
     <div class="item__information">
@@ -46,7 +46,7 @@
         box-shadow: var(--shadow);
         border-radius: var(--border-radius);
 
-        border-left: 5px solid var(--primary);
+        border-left: 5px solid transparent;
         height: 150px;
 
         display: grid;
@@ -54,6 +54,10 @@
         grid-template-rows: 30px min-content 30px;
         column-gap: 20px;
         align-items: center;
+    }
+
+    .item--border {
+        border-left: 5px solid var(--primary);
     }
 
     .item__logo,

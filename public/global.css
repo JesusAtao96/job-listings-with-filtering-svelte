@@ -81,6 +81,7 @@ body::before {
 	}
 
 	body {
+		grid-template-rows: 120px repeat(3, auto) 1fr min-content;
 		grid-template-columns: [full-start] 20px [center-start] minmax(min-content, var(--max-width)) [center-end] 20px [full-end];
 	}
 
